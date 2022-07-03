@@ -1,0 +1,77 @@
+{
+  "name": "Blockchain-App",
+  "version": "1.0.0",
+  "description": "26th November 2021: Implement Blockchain prototype - implement Block class with the following fields:   - data: the data stored in the block   - hash: the hashed value of the data   - lastHash: the hash of the previous block - implement prototype hash function - implement Blockchain class that:   - creates genesis block   - creates a list of blocks containing the genesis block as its first element   - implements addData method - current functionalities:   - create blockchain   - add blocks",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "npm run build-client & node index.js",
+    "dev": "npm run dev-client & npm run start-redis && cross-env ENV='development' nodemon index.js",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' ENV='development' nodemon index.js",
+    "start-redis": "redis-server --daemonize yes",
+    "build-client": "npm run clean && parcel build client/src/index.html --dist-dir client/dist",
+    "dev-client": "npm run clean && parcel client/src/index.html --dist-dir client/dist",
+    "clean": "rm -rf .parcel-cache client/dist"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriancondrea/Blockchain-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriancondrea/Blockchain-App/issues"
+  },
+  "homepage": "https://github.com/adriancondrea/Blockchain-App#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@parcel/transformer-js": "^2.5.0",
+    "bootstrap": "^5.1.3",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "firebase": "^9.7.0",
+    "firebase-admin": "^10.2.0",
+    "jest": "^28.0.3",
+    "nodemon": "^1.18.4",
+    "process": "^0.11.10",
+    "prop-types": "^15.8.1",
+    "react-datetime-picker": "^3.5.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "body-parser": "^1.19.1",
+    "components": "^0.1.0",
+    "elliptic": "^6.4.1",
+    "express": "^4.18.1",
+    "express-openid-connect": "^2.7.2",
+    "hex-to-binary": "^1.0.1",
+    "history": "^4.7.2",
+    "parcel": "^2.5.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "2.3.1",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.2",
+    "save-dev": "^0.0.1-security",
+    "uuid": "^3.3.2"
+  }
+}
